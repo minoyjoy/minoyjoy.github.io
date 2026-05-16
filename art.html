@@ -14,7 +14,7 @@
         <a class="link-container" href="about.html">About</a>
       </div>
     </div>
-    <div class="container">
+    <div class="art-container">
       <div class="project">
         <div class="project-header">
           <h2 class="project-title">2D Art</h2>
@@ -46,12 +46,15 @@
           <img class="project-image device" src="assets/title_screen.png" />
           <img
             class="project-image device long-item"
-            src="assets/s_background_progress (1).gif"
+            src="assets/s_background_progress.png"
           />
         </div>
         <h3>Character Portraits</h3>
         <div class="art-images">
-          <img class="project-image device" src="assets/tt_portraits.png" />
+          <img
+            class="project-image device long-item-2"
+            src="assets/tt_portraits.png"
+          />
           <img
             class="project-image device"
             src="assets/scarlet_portrait_final.png"
@@ -71,7 +74,10 @@
         </div>
         <h3>UI Assets</h3>
         <div class="art-images">
-          <img class="project-image device" src="assets/all buttons.png" />
+          <img
+            class="project-image device med-item"
+            src="assets/all buttons.png"
+          />
           <img
             class="project-image device"
             src="assets/castle burnt textbox.png"
@@ -94,10 +100,42 @@
           off crisis looms overhead. I was responsible for the interior
           backgrounds, character portraits, and Scarlet's sprites.
         </p> -->
-        <h3>Character Portraits</h3>
+        <h3>Characters</h3>
         <div class="art-images"></div>
       </div>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <span class="close">×</span>
+        <img class="modal-content" id="img01" />
+        <div id="caption"></div>
+      </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // Get all images and insert the clicked image inside the modal
+      // Get the content of the image description and insert it inside the modal image caption
+      var images = document.getElementsByTagName("img");
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      var i;
+      for (i = 0; i < images.length; i++) {
+        images[i].onclick = function () {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          modalImg.alt = this.alt;
+          captionText.innerHTML = this.nextElementSibling.innerHTML;
+        };
+      }
+    </script>
   </body>
 </html>

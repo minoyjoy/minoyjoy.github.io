@@ -116,11 +116,23 @@ a:hover {
 .long-item {
     grid-area: 3 / 1 / span 1 / span 3;
 }
+.long-item-2 {
+    grid-area: 1 / 1 / span 1 / span 3;
+}
+.med-item {
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+
+.art-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px 20vw;
+}
 
 .art-images {
     width: 100%;
     display: grid;
-    grid-template-rows: 600px 400px 400px;
+    grid-template-rows: 400px 400px 400px;
     grid-template-columns: auto auto auto;
     column-gap: 10px;
     row-gap: 10px;
@@ -138,6 +150,10 @@ a:hover {
     border-radius: 8px;
 }
 
+.project-image:hover {
+    border: 2px solid #777;
+}
+
 .project-image.device {
     flex: 0 0 auto;
     max-width: 100%;
@@ -145,4 +161,43 @@ a:hover {
     flex: 1 1 100%;
     height: 100%;
         object-fit: cover;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    max-height: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    margin-bottom: 100px;
+    /* padding-bottom: 20px; */
+    width: 80%;
+    max-width: 700px;
+    max-height: 95%;
+    object-fit: contain;
 }
